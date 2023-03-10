@@ -18,16 +18,20 @@ public class Words {
                     List<String> oldValue = fileInResult.get(iniziale);
                     oldValue.add(parola);
                     fileInResult.put(iniziale, Collections.singletonList(parola));
+                    continue;
                 }else{
                     List<String> oldValue = new ArrayList<>();
                     oldValue.add(parola);
+                    fileInResult.put(iniziale,oldValue);
                 }
+
                 try (
                         FileWriter fw= new FileWriter(fileOut);
                 ){
                     fw.write(iniziale);
                     fw.flush();
                     fw.write(parola);
+
                 }catch (Exception e){
                     e.printStackTrace();
                 }
