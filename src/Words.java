@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.io.*;
 import java.util.*;
 
@@ -15,7 +14,7 @@ public class Words {
             String[] parole = riga.split("\\s+");
             for (String parola : parole){
                 char iniziale = parola.charAt(0);
-                if (iniziale == parola.indexOf(iniziale, 0)){
+                if (iniziale == parola.indexOf(iniziale)){
                     List<String> oldValue = fileInResult.get(iniziale);
                     oldValue.add(parola);
                     fileInResult.put(iniziale, Collections.singletonList(parola));
@@ -23,16 +22,16 @@ public class Words {
                     List<String> oldValue = new ArrayList<>();
                     oldValue.add(parola);
                 }
-            }
-        }
-
-        try (
-                FileWriter fw= new FileWriter(fileOut);
+                try (
+                        FileWriter fw= new FileWriter(fileOut);
                 ){
-            fw.write(fileOut);
-
-        }catch (Exception e){
-            e.printStackTrace();
+                    fw.write(iniziale);
+                    fw.flush();
+                    fw.write(parola);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
         }
         return fileInResult;
     }
