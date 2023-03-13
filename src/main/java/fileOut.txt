@@ -1,0 +1,7 @@
+C [ [Ciao, Canguro] ] 
+D [ [Davide, Domodossola] ] 
+e [ [entusiasmo, e] ] 
+i [ [incazzato, iracondo] ] 
+m [ [molto, maven] ] 
+n [ [namerda] ] 
+s [ [sono, sicuramente] ] 
